@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+    <h1 class="display-1 text-center">{{ movie.title }}</h1>
+    <div class="container py-5">
+        <a class="btn btn-warning" href="{% url 'index' %}">Back</a>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                {% if movie.poster %}
+                    <img src="{{ movie.poster.url }}" class="img-fluid rounded" alt="{{ movie.title }}">
+                {% else %}
+                    <div class="bg-secondary d-flex align-items-center justify-content-center rounded" style="height: 400px;">
+                        <span class="text-white">No Image</span>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <p><strong>IMDB Code:</strong> {{ movie.imbd }}</p>
+                <p><strong>Year:</strong> {{ movie.year }}</p>
+                <p><strong>Production House:</strong> {{ movie.productionHouse.name }}</p>
+                <p><strong>Duration:</strong> {{ movie.duration }} minutes</p>
+                <p><strong>Genre:</strong> {{ movie.genre }}</p>
+                <p><strong>Format:</strong> {{ movie.format }}</p>
+                <p><strong>Price:</strong> ${{ movie.price }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'bootstrap.js' %}"></script>
+</body>
+</html>

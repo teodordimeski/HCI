@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Movies</h1>
+
+        <div class="mb-4">
+            <a href="{% url 'add' %}" class="btn btn-primary btn-lg">+ Add New Movie</a>
+        </div>
+
+        <div class="row g-4">
+            {% for movie in movies %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100">
+                        {% if movie.poster %}
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" class="card-img-top" style="height: 300px; object-fit: cover;">
+                        {% else %}
+                            <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 300px;">
+                                <span class="text-white">No Image</span>
+                            </div>
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie.title }}</h5>
+                            <p class="card-text fw-bold text-success">${{ movie.price }}</p>
+                            <a href="{% url 'details' movie.id %}" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <p class="text-center text-muted">No movies available. <a href="{% url 'add' %}">Add one!</a></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{% static 'bootstrap.js' %}"></script>
+</body>
+</html>
