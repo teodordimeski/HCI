@@ -1,0 +1,147 @@
+[
+  {
+    "model": "trainings.trainer",
+    "pk": 1,
+    "fields": {
+      "name": "Marko Petrov",
+      "country": "Macedonia",
+      "city": "Skopje",
+      "years_of_experience": 8,
+      "website": "https://www.markopetrov.mk"
+    }
+  },
+  {
+    "model": "trainings.trainer",
+    "pk": 2,
+    "fields": {
+      "name": "Ana Jovanova",
+      "country": "Macedonia",
+      "city": "Ohrid",
+      "years_of_experience": 5,
+      "website": "https://www.anajovanova.mk"
+    }
+  },
+  {
+    "model": "trainings.trainer",
+    "pk": 3,
+    "fields": {
+      "name": "Stefan Nikolov",
+      "country": "Macedonia",
+      "city": "Bitola",
+      "years_of_experience": 12,
+      "website": "https://www.stefannikolov.mk"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 1,
+    "fields": {
+      "name": "Morning Cardio Blast",
+      "image": "trainings/training1.jpg",
+      "trainer": 1,
+      "category": "cardio",
+      "level": "beginner",
+      "duration": 45,
+      "capacity": 20,
+      "price": "350.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 2,
+    "fields": {
+      "name": "Power Strength",
+      "image": "trainings/training2.jpg",
+      "trainer": 3,
+      "category": "strength",
+      "level": "advanced",
+      "duration": 60,
+      "capacity": 12,
+      "price": "500.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 3,
+    "fields": {
+      "name": "Yoga Flow",
+      "image": "trainings/training3.jpg",
+      "trainer": 2,
+      "category": "yoga",
+      "level": "beginner",
+      "duration": 60,
+      "capacity": 15,
+      "price": "400.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 4,
+    "fields": {
+      "name": "HIIT Extreme",
+      "image": "trainings/training4.jpg",
+      "trainer": 1,
+      "category": "hiit",
+      "level": "advanced",
+      "duration": 30,
+      "capacity": 10,
+      "price": "550.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 5,
+    "fields": {
+      "name": "Pilates Core",
+      "image": "trainings/training5.jpg",
+      "trainer": 2,
+      "category": "pilates",
+      "level": "intermediate",
+      "duration": 50,
+      "capacity": 12,
+      "price": "420.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 6,
+    "fields": {
+      "name": "CrossFit Challenge",
+      "image": "trainings/training6.jpg",
+      "trainer": 3,
+      "category": "crossfit",
+      "level": "advanced",
+      "duration": 60,
+      "capacity": 8,
+      "price": "600.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 7,
+    "fields": {
+      "name": "Full Body Stretch",
+      "image": "trainings/training7.jpg",
+      "trainer": 2,
+      "category": "stretching",
+      "level": "beginner",
+      "duration": 40,
+      "capacity": 20,
+      "price": "300.00"
+    }
+  },
+  {
+    "model": "trainings.training",
+    "pk": 8,
+    "fields": {
+      "name": "Intermediate Strength",
+      "image": "trainings/training8.jpg",
+      "trainer": 3,
+      "category": "strength",
+      "level": "intermediate",
+      "duration": 55,
+      "capacity": 15,
+      "price": "480.00"
+    }
+  }
+]

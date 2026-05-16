@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+    <h1 class="display-1 text-center">{{pageTitle}}</h1>
+    <div class="container">
+        <a class="btn btn-success" href="{% url 'add' %}">Add New Training</a>
+        <div class="row">
+            {% for training in trainings %}
+                <div class="card col-4">
+                    <img src="{{training.image.url}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{training.name}}</h5>
+                        <p class="card-text">{{training.price}} $</p>
+                            <p class="card-text">{{training.duration}} min</p>
+                      </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
