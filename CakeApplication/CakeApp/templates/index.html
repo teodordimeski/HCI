@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white container">
+  <a class="navbar-brand text-danger" href="#">Cakery&Bakery</a>
+
+    <div class="navbar-nav ms-auto"  >
+      <a class="nav-item nav-link active" href="http://127.0.0.1:8000/index">Home</a>
+      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link" href="http://127.0.0.1:8000/add">Add</a>
+      <a class="nav-item nav-link disabled" href="#">Pricing</a>
+    </div>
+
+</nav>
+
+<div class="container-fluid py-5 bg-danger">
+<div class="container ">
+  <div class="row">
+    <div class="col d-flex flex-column justify-content-center align-items-centerr">
+        <h2>Explore the wonderland of tastes!</h2>
+        <p1>Assignment for HCI Exam in September 2026</p1>
+<div class="mt-3" >
+      <button  type="button" class="btn text-black bg-white">Get started</button>
+      <button  type="button" class="btn text-white border-1 border-white">Learn more</button>
+</div>
+    </div>
+    <div class="col">
+        <img src="../images/cakeimages/cake1.jpg" height="340" width="560"/>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container w-50 text-center my-5 " >
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aliquam aspernatur autem commodi culpa cum deleniti dolore doloremque excepturi explicabo fuga, fugiat fugit harum hic illo ipsa iusto magni mollitia odio officiis optio perferendis, quae recusandae sapiente soluta unde! At, consequuntur doloribus eum iure labore natus numquam perspiciatis voluptate.</p>
+
+</div>
+
+<div class="container w-50 text-center my-5" >
+<h3 class="text-danger">Products</h3>
+</div>
+
+    <div class="container mt-5">
+        <div class="row">
+            {% for cake in cakes %}
+                <div class="card col-4">
+                    <img src="{{cake.image.url}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{cake.name}}</h5>
+                        <p class="card-text">{{cake.price}} $</p>
+                            <p class="card-text">{{cake.description}}</p>
+                      </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<div class="bg-danger mt-5 ">
+    <div class="container  d-flex flex-row justify-content-center align-items-center">
+     <p>Copyright</p>
+
+    <div class="d-flex flex-row ms-auto"  >
+      <a class="mx-2 text-white" href="#">Privacy</a>
+      <a class="mx-2 text-white" href="#">Terms</a>
+      <a class="mx-2 text-white" href="http://127.0.0.1:8000/add">Add</a>
+    </div>
+    </div>
+
+</div>
+
+</body>
+</html>

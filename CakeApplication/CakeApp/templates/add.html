@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white container">
+  <a class="navbar-brand text-danger" href="#">Cakery&Bakery</a>
+
+    <div class="navbar-nav ms-auto"  >
+      <a class="nav-item nav-link active" href="http://127.0.0.1:8000/index">Home</a>
+      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link" href="http://127.0.0.1:8000/add">Add</a>
+      <a class="nav-item nav-link disabled" href="#">Pricing</a>
+    </div>
+
+</nav>
+
+<body>
+<div class="w-50 justify-content-center align-items-center container  my-5 bg-light ">
+    <h1 class="display-5 text-center">Add New Cake</h1>
+    <div class="container">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-danger w-100"  type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+
+<div class="bg-danger ">
+    <div class="container  d-flex flex-row">
+     <p>Copyright</p>
+
+    <div class="d-flex flex-row ms-auto"  >
+      <a class="mx-2 text-white" href="#">Privacy</a>
+      <a class="mx-2 text-white" href="#">Terms</a>
+      <a class="mx-2 text-white" href="http://127.0.0.1:8000/add">Add</a>
+    </div>
+    </div>
+
+</div>
+</body>
+
+
+
+</html>
