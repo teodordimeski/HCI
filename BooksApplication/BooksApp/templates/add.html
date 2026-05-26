@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add page</title>
+    <link rel="stylesheet" href="../static/bootstrap.css">
+
+</head>
+<body>
+
+<div class="w-50 justify-content-center align-items-center container  my-5 bg-light ">
+    <h1 class="display-5 text-center">Add New Book</h1>
+    <div class="container">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-dark w-100"  type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../static/bootstrap.css">
+
+</head>
+<body>
+
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center align-items-center">
+            {% for book in books %}
+                <div class="card col-3 border-0 m-2 p-5 bg-light">
+                    <img src="{{book.image.url}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{book.title}}</h5>
+                        <p class="card-text">{{book.price}} $</p>
+                            <p class="card-text">{{book.description}}</p>
+                      </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
