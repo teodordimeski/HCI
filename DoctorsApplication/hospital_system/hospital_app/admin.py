@@ -35,14 +35,15 @@ class AppointmentAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
     def has_change_permission(self, request, obj=None):
-        if request.user.is_superuser:
-            return True
-        if obj:
-            doctor_qs = Doctor.objects.filter(user=request.user)
-            if doctor_qs.exists():
-                doctor = doctor_qs.first()
-                return obj.responsible_doctor == doctor
-        return False
+        # if request.user.is_superuser:
+        #     return True
+        # if obj:
+        #     doctor_qs = Doctor.objects.filter(user=request.user)
+        #     if doctor_qs.exists():
+        #         doctor = doctor_qs.first()
+        #         return obj.responsible_doctor == doctor
+        # return False
+        return Doctor.objects.filter(user=request.user).first()==obj.responsible_doctor or request.user.is_superuser
 
     def has_delete_permission(self, request, obj=None):
         if obj and obj.status != 'scheduled':
