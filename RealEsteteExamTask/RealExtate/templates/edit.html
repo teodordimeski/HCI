@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit property</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Edit property</h2>
+
+    <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+</body>
+</html>

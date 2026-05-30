@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+    <h1 class="display-1 text-center">{{pageTitle}}</h1>
+    <div class="container">
+        <a class="btn btn-success" href="{% url 'add' %}">Add New Training</a>
+        <div class="row">
+            {% for prop in properties %}
+                <div class="card col-4">
+                    <img src="{{prop.image.url}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{prop.name}}</h5>
+                        <p class="card-text">{{prop.price}} $</p>
+                            <p class="card-text">{{prop.description}} </p>
+                          <a href="{% url 'edit' prop.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                      </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -16,7 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from RealExtateApp import views as property_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', property_views.index, name='index'),  # root -> index view
+    path('add/', property_views.add, name='add'),  # /add/ -> add view
+    path('edit/<int:pk>/', property_views.edit, name='edit'),  # /add/ -> add view
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

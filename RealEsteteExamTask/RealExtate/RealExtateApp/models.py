@@ -24,7 +24,7 @@ class Property(models.Model):
     is_reserved = models.BooleanField(default=False)
     is_sold = models.BooleanField(default=False)
     price = models.IntegerField(default=0)
-    characteristics = models.TextField(default="")
+    characteristics = models.TextField(default="",null=True, blank=True)
 
     def __str__(self):
         return f"Name: {self.name} Size:{self.size} Description:{self.description}"
@@ -37,4 +37,11 @@ class AgentProof(models.Model):
     def __str__(self):
         return f"Agent: {self.agent.name} Property: {self.property.name}"
 
+
+class Characteristic(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+
+    def __str__(self):
+        return f"Name: {self.name} Price: {self.price}"
 
