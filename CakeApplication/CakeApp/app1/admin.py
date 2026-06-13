@@ -24,17 +24,12 @@ class CakeAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return True
         # Корисникот мора да е пекар
-        try:
-            baker = Baker.objects.get(user=request.user)
-        except Baker.DoesNotExist:
-            return False
-
-        # Максимум 10 торти по пекар
-        num_cakes = Cake.objects.filter(baker=baker).count()
-        if num_cakes >= 10:
-            return False
-
-        return True
+        if  Baker.objects.filter(user=request.user).exists():
+             baker = Baker.objects.filter(user=request.user).first()
+             if  Cake.objects.filter(baker=baker).count()>= 10:
+                 return False
+             return True
+        return False
 
     def save_model(self, request, obj, form, change):
         if not change:
